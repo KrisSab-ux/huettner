@@ -1,0 +1,108 @@
+% !TEX TS-program = pdflatex
+\documentclass[a4paper,12pt]{article}
+
+% ------------------------------------------------
+% Pakete
+% ------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{tikz}
+\usepackage{pdfpages}
+
+\usetikzlibrary{positioning, arrows.meta, shapes}
+\geometry{margin=2cm}
+
+% ------------------------------------------------
+% Seiteneinstellungen
+% ------------------------------------------------
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\setstretch{1.2}
+
+% ------------------------------------------------
+% Kopf- und Fußzeilen
+% ------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Document Analyzer}
+\fancyhead[R]{\thepage}
+\fancyfoot[L]{\textit{Projektarbeit}}
+\fancyfoot[R]{\textit{Stand: \today}}
+
+% ------------------------------------------------
+% Titelblatt
+% ------------------------------------------------
+\title{
+    \vspace{3cm}
+    \textbf{\LARGE Dokumentation}\\[1em]
+    \textbf{\Large Intelligence Engineering: Document Analyzer}\\[3em]
+}
+\author{
+    \begin{tabular}{rl}
+        \textbf{Sarah Lemke:} & 1111111 \\ 
+        \textbf{Benedikt Lerch:} & 1111111 \\ 
+        \textbf{Simon von Oppenkowski:} & 1111111 \\ 
+        \textbf{Kristian Sabados:} & 2945629 \\ 
+    \end{tabular}
+}
+\date{Abgabe: \today}
+
+% ------------------------------------------------
+% Abschnittsformatierung
+% ------------------------------------------------
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+% ------------------------------------------------
+% Dokumentbeginn
+% ------------------------------------------------
+\begin{document}
+
+% --- Titelseite ---
+\pagenumbering{roman}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+% --- Inhaltsverzeichnis ---
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
+% ------------------------------------------------
+% HAUPTTEIL
+% ------------------------------------------------
+\input{../chapter/1_projetbeschreibung/1.tex}
+\newpage
+\input{../chapter/2_use_cases_diagramm/2.tex}
+\newpage
+\input{../chapter/4_eventstorming/4.tex}
+\newpage
+\input{../chapter/8_3loesungsansätze_ML_simpel_bis_komplex_sieheTabelle/8.tex}
+\newpage
+\input{../chapter/9_pipelineplanung/9.tex}
+
+
+
+% ------------------------------------------------
+% ANHANG (optional)
+% ------------------------------------------------
+\appendix
+\section{Anhang}
+% Falls vorhanden, ergänzen
+
+\end{document}

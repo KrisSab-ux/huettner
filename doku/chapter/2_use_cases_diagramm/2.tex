@@ -1,0 +1,189 @@
+\tcbset{
+  userstory/.style={
+    colback=blue!5,
+    colframe=blue!75!black,
+    boxrule=0.8mm,
+    arc=3mm,
+    fonttitle=\bfseries,
+    coltitle=black,
+    title={#1},
+    left=3mm,
+    right=3mm,
+    top=2mm,
+    bottom=2mm,
+  }
+}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+\section{User Story Cards und Epics}
+\begin{tcolorbox}[userstory={Key/Value Dictionary erstellen}]
+\begin{tabular}{|m{2cm}|m{6cm}|m{2cm}|}
+\hline
+\textbf{Prio} & \textbf{Name} & \textbf{Points}\\
+\hline
+1 & Key/Value Dictionary erstellen & 30h \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Als} EntwicklerIn \\
+\textbf{möchte ich} aus einem eigens zu diesem Zweck generierten Datensatz die wichtigsten und gängigsten Key-Value Paare für Start der Software extrahieren \\
+\textbf{um} um einen repräsentativen Start und Default für die Software bereitszustellen \\
+
+\vspace{2mm}
+
+\begin{tabular}{|m{3cm}|m{7cm}|}
+\hline
+\textbf{Risiko} & [Beschreibung] \\
+\hline
+\textbf{Points (Post)} &  \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Vorausgesetzt} ein solcher Datensatz konnte generiert oder beschaffen werden \\
+\textbf{wenn} die Software Dokumente per OCR ausliest, \textbf{dann} wird ein festgeleger Prozentsatz der Dokumente anhand bestehender Beispiele korrekt zugeordnet
+\end{tcolorbox}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\vspace{1cm}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{tcolorbox}[userstory={Training des Modells}]
+\begin{tabular}{|m{2cm}|m{6cm}|m{2cm}|}
+\hline
+\textbf{Prio} & \textbf{Name} & \textbf{Points} \\
+\hline
+1 & Trainng des Modells & /h \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Als} EntwicklerIn \\
+\textbf{möchte ich} aus den festgelegten Trainingsdaten ein Modell trainieren, welches Rechnungen inhaltlich den korrekten Buchungskonten zuweisen kann\\
+\textbf{um} das Bearbeiten von Rechnungen zu beschleunigen und Fehler durch weniger anfallende manuelle und monotone Arbeit zu reduzieren \\
+
+\vspace{2mm}
+
+\begin{tabular}{|m{3cm}|m{7cm}|}
+\hline
+\textbf{Risiko} & [Beschreibung] \\
+\hline
+\textbf{Points (Post)} & 3 \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Vorausgesetzt} das Modell erhält repräsentative Daten, \\
+\textbf{wenn} die Daten korrekt geesplittet wurden, \textbf{dann} können erste korrekte Klassifizierungen neuer Rechnungen durch das Training vorgenommen werden.
+\end{tcolorbox}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\vspace{1cm}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{tcolorbox}[userstory={Modell evaluieren}]
+\begin{tabular}{|m{2cm}|m{6cm}|m{2cm}|}
+\hline
+\textbf{Prio} & \textbf{Name} & \textbf{Points} \\
+\hline
+2 & Modell evaluieren & 32h \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Als} EntwicklerIn \\
+\textbf{möchte ich} das trainierte Modell mit Testdaten evaluieren \\
+\textbf{um} festzustellen, wie genau es neuen Rechnungen die korrekte Hauptkonten zuordnen kann \\
+
+\vspace{2mm}
+
+\begin{tabular}{|m{3cm}|m{7cm}|}
+\hline
+\textbf{Risiko} & [Beschreibung] \\
+\hline
+\textbf{Points (Post)} & 3 \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Vorausgesetzt} das Modell ist trainiert und einsatzfähig, \\
+\textbf{wenn} eine Menge von mindestens 100 Testrechnungen verarbeitet wird, \textbf{dann}, werden erste korrekte Rechnungsklassifikationen erstellet und ausgegeben.
+\end{tcolorbox}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\vspace{1cm}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{tcolorbox}[userstory={Modell integrieren}]
+\begin{tabular}{|m{2cm}|m{6cm}|m{2cm}|}
+\hline
+\textbf{Prio} & \textbf{Name} & \textbf{Points} \\
+\hline
+3 & Modell integrieren & 48h \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Als} EntwicklerIn \\
+\textbf{möchte ich} das trainierte Modell in die Document Analyzer Pipeline integrieren \\
+\textbf{um} es Benutzern beim Uplaod automatisch die exxtrahierten Daten zeigen lassen zu können \\
+
+\vspace{2mm}
+
+\begin{tabular}{|m{3cm}|m{7cm}|}
+\hline
+\textbf{Risiko} & [Beschreibung] \\
+\hline
+\textbf{Points (Post)} & 3 \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Vorausgesetzt} das Modell ist erfolgreich trainiert und getestet, \\
+\textbf{wenn} der Benutzer Rechnungen hochlädt, \textbf{dann},  wird das Modell automatisch aufgerufen und liefert JSON-Ausgaben mit Schlüssel/Wert-Paaren welcher als Outputin im UI angezeogt wird. Cache wird nach Bestätigung DSGVO-konform gelöscht.
+\end{tcolorbox}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\vspace{1cm}
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
+\begin{tcolorbox}[userstory={Modell überwachen und verbessern}]
+\begin{tabular}{|m{2cm}|m{6cm}|m{2cm}|}
+\hline
+\textbf{Prio} & \textbf{Name} & \textbf{Points} \\
+\hline
+4 & Modell überwachen und verbessern & 32h \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Als} EntwicklerIn \\
+\textbf{möchte ich} die Integrität meines Modells auf die bestmögliche Performance verbessern\\
+\textbf{um} die Fehlerrate zu minimieren und User zuverlässige Ergebnisse zu präsentieren\\
+
+\vspace{2mm}
+
+\begin{tabular}{|m{3cm}|m{7cm}|}
+\hline
+\textbf{Risiko} & [Beschreibung] \\
+\hline
+\textbf{Points (Post)} & 3 \\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+\textbf{Vorausgesetzt} das Modell läuft und ist stabil, \\
+\textbf{wenn} permanent Rechnungen zur Klassifikation hochgeladen werden, \textbf{dann}, werden Hyperparameter so verändert, dass F1-Score und Accuracy bei mindestens 98 Prozent liegen.
+\end{tcolorbox}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------
